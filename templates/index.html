@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Breast Cancer Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="static/images/style.css">
+  
+  <style>
+     div {
+        background-image: url('static/images/Breast cancer background.jpg');
+         }
+  </style>
+  <table width="100%" border="1"></table>
+
+</head>
+
+<body>
+
+  <div>
+    <th><center><h1 class='main_heading'>Breast Cancer Prediction using Machine Learning</h1></center></th>
+
+ 
+ <div class="login">
+	
+    <!-- Get input for predict the cancer -->
+     </div>
+    <center>
+    <form action="{{ url_for('predict')}}" method="post">
+        <h2>Enter the Below Features value: </h2>
+        <br>
+        <table class="center">
+        <td>
+       	<input type="text" name="Mean_radius" placeholder="Mean Radius" required="required" />
+        <input type="text" name="Mean_texture" placeholder="Mean Texture" required="required" />
+		<input type="text" name="Mean_perimeter" placeholder="Mean Perimeter" required="required" />
+		<input type="text" name="Mean_area" placeholder="Mean Area" required="required" />
+        <input type="text" name="Mean_smoothness" placeholder="Mean Smoothness" required="required" />
+        <br>
+        <br>
+		<input type="text" name="Mean_compactness" placeholder="Mean Compactness" required="required" />
+        <input type="text" name="Mean_concavity" placeholder="Mean Concavity" required="required" />
+        <input type="text" name="Mean_concave_points" placeholder="Mean Concave Points" required="required" />
+		<input type="text" name="Mean_symmetry" placeholder="Mean Symmetry" required="required" />
+    	<input type="text" name="Mean_fractal_dimension" placeholder="Mean Fractal Dimension" required="required" />
+        <br>
+        <br>
+        <br>
+        <input type="text" name="Radius_Error" placeholder="Radius Error" required="required" />
+		<input type="text" name="Texture_Error" placeholder="Texture Error" required="required" />
+    	<input type="text" name="Perimeter_Error" placeholder="Perimeter Error" required="required" />
+        <input type="text" name="Area_Error" placeholder="Area Error " required="required" />
+		<input type="text" name="Smoothness_Error" placeholder="Smoothness Error" required="required" />
+    	<br>
+        <br>
+        <input type="text" name="Compactness_Error" placeholder="Compactness Error" required="required" />
+        <input type="text" name="Concavity_Error" placeholder="Concavity Error" required="required" />
+		<input type="text" name="Concave_points_Error" placeholder="Concave Points Error" required="required" />
+    	<input type="text" name="Symmetry_Error" placeholder="Symmetry Error" required="required" />
+        <input type="text" name="Fractal_dimension_Error" placeholder="fractal dimension Error" required="required" />
+        <br>
+        <br>
+        <br>
+        <input type="text" name="Worst_radius" placeholder="Worst Radius" required="required" />
+    	<input type="text" name="Worst_texture" placeholder="Worst Texture" required="required" />
+        <input type="text" name="Worst_perimeter" placeholder="Worst Perimeter" required="required" />
+		<input type="text" name="Worst_area" placeholder="Worst Area" required="required" />
+    	<input type="text" name="Worst_smoothness" placeholder="Worst Smoothness" required="required" />
+        <br>
+        <br>
+        <input type="text" name="Worst_compactness" placeholder="Worst Compactness" required="required" />
+		<input type="text" name="Worst_concavity" placeholder="Worst Concavity" required="required" />
+    	<input type="text" name="Worst_concave_points" placeholder="Worst Concave Points" required="required" />
+        <input type="text" name="Worst_symmetry" placeholder="Worst Symmetry" required="required" />
+		<input type="text" name="Worst_fractal_dimension" placeholder="Worst Fractal Dimension" required="required" />
+        <br>
+        <br>
+        </table>
+        </td>
+
+        <!-- Show button -->
+        <div class="button_cont" align="center"><a class="button_css" href="https://github.com/Sunilkpraja/Breast-Cancer-End-to-End-Project" target="_blank" rel="nofollow noopener">
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict Cancer</strong></button></a>
+        </div>
+        
+    </form>
+    </center>
+   
+   <!-- Show predicted output using ML model --> 
+   <div>
+       <center>
+   <h1>{{ prediction_text }}</h1>
+       </center>
+    
+   </div>
+
+ </div>
+
+</body>
+</html>
